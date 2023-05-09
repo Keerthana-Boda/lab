@@ -1,0 +1,54 @@
+DESCRIPTION
+Project objective:
+As a developer, write a program to create an arithmetic calculator.
+ 
+Background of the problem statement:
+As a developer, write a Java code to create a calculator to perform the four basic arithmetic operations (addition, subtraction, multiplication, and division).
+ 
+ 
+package arithmeticcalculator;
+import java.util.*;
+
+public class ArithmeticCalculator 
+{
+
+	public static void main(String[] args) 
+{
+		// TODO Auto-generated method stub
+		float num1,num2,result = 0;
+		char op;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter first number : ");
+		num1 = sc.nextFloat();
+		System.out.println("Enter operator : ");
+		op = sc.next().charAt(0);
+		System.out.println("Enter second number : ");
+		num2 = sc.nextFloat();
+		switch(op) 
+{
+		case '+':
+			result = num1 + num2;
+			break;
+			
+		case '-':
+			result = num1 - num2;
+			break;
+			
+		case '*':
+			result = num1 * num2;
+			break;
+
+		case '%':
+			result = num1 % num2;
+			break;
+		default:
+			System.out.println("Invalid opration");
+			break;
+		}
+		
+		System.out.println("Result : " + result);
+}
+
+}
+
+

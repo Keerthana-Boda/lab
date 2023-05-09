@@ -1,0 +1,44 @@
+DESCRIPTION
+
+Project objective: As a developer, write a program to search a string entered by a user from the array of strings.
+
+ 
+
+
+package emailvalidation;
+import java.util.*;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class EmailValidation {
+	public static boolean isValid(String email) {
+		String regex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+                "[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                "A-Z]{2,7}$";
+		Pattern p = Pattern.compile(regex);
+		if(email == null) 
+			return false;
+		else
+		return p.matcher(email).matches();
+		}
+
+	public static void main(String[] args) {
+		
+		ArrayList<String> mail = new ArrayList<>();
+		mail.add("xyz@gmail.com");
+		mail.add("abc.mail");
+		
+		for(String i : mail) {
+			if(isValid(i))
+				System.out.println(i + " is valid");
+			else
+				System.out.println(i + " is not valid");
+		}
+	
+		
+		
+	}
+}
+
+
